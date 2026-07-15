@@ -1,24 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 100 100">
-
-    <polygon points="50,4 95,27 95,73 50,96 5,73 5,27"
-             fill="#14233A"/>
-
-    <g stroke="#F2F4F3"
-       stroke-width="4"
-       fill="none"
-       stroke-linecap="round">
-
-        <line x1="30" y1="50" x2="40" y2="50"/>
-
-        <rect x="40"
-              y="30"
-              width="20"
-              height="40"
-              rx="10"/>
-
-        <line x1="60" y1="50" x2="70" y2="50"/>
-
-    </g>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        .mark { fill: #64B5F6; }
+      }
+    </style>
+  </defs>
+  
+  <!-- Modern geometric mark: interlocking circles forming a connected hub -->
+  <!-- Center circle -->
+  <circle cx="50" cy="50" r="8" class="mark" fill="#D4754F"/>
+  
+  <!-- Four connecting orbits with points -->
+  <circle cx="50" cy="25" r="6" class="mark" fill="#D4754F"/>
+  <circle cx="75" cy="50" r="6" class="mark" fill="#D4754F"/>
+  <circle cx="50" cy="75" r="6" class="mark" fill="#D4754F"/>
+  <circle cx="25" cy="50" r="6" class="mark" fill="#D4754F"/>
+  
+  <!-- Connecting lines -->
+  <line x1="50" y1="33" x2="50" y2="42" stroke="#D4754F" stroke-width="2" stroke-linecap="round"/>
+  <line x1="58" y1="58" x2="67" y2="67" stroke="#D4754F" stroke-width="2" stroke-linecap="round"/>
+  <line x1="50" y1="58" x2="50" y2="67" stroke="#D4754F" stroke-width="2" stroke-linecap="round"/>
+  <line x1="42" y1="58" x2="33" y2="67" stroke="#D4754F" stroke-width="2" stroke-linecap="round"/>
 </svg>

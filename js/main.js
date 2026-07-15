@@ -12,6 +12,27 @@ navMenu.querySelectorAll('a').forEach(function (link) {
     });
   });
 
+  // Theme toggle
+var themeToggle = document.getElementById('themeToggle');
+var htmlElement = document.documentElement;
+
+function initTheme() {
+  var savedTheme = localStorage.getItem('theme') || 'light';
+  htmlElement.setAttribute('data-theme', savedTheme);
+}
+
+function toggleTheme() {
+  var currentTheme = htmlElement.getAttribute('data-theme');
+  var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  htmlElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
+initTheme();
+if (themeToggle) {
+  themeToggle.addEventListener('click', toggleTheme);
+}
+
   // Active nav link on scroll
 var sections = document.querySelectorAll('main section[id]');
 var navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
