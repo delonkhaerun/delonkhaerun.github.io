@@ -1,14 +1,14 @@
 :root{
-  --ink:#14233A;
-  --blueprint:#2E5C8A;
+  --ink:#1B2B42;
+  --blueprint:#406A93;
   --blueprint-soft:#4A7AAD;
   --copper:#C17A3D;
-  --copper-soft:#D18A4C;
+  --copper-soft:#D8A16A;
   --paper:#F2F4F3;
   --paper-dim:#E7EBEA;
-  --line:#D7DEDC;
+  --line:#E2E8F0;
   --mist:#566577;
-  --body-text:#2C3E56;
+  --body-text:#334155;
   --paper-text-dim:rgba(242,244,243,0.72);
   --paper-line-dim:rgba(242,244,243,0.06);
  
@@ -109,7 +109,7 @@ h3{font-size:1.15rem;font-weight:600;margin-bottom:0.5rem;}
   z-index:0;
 }
 .dark-section .section-inner::before{background:rgba(242,244,243,0.18);}
-.section-content{position:relative;z-index:1;min-width:0;}
+.section-content{position:relative;z-index:1;min-width:0;padding-top:0.73rem;}
  
 .hex{
   clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
@@ -216,18 +216,44 @@ h3{font-size:1.15rem;font-weight:600;margin-bottom:0.5rem;}
 /* ================================================
    ABOUT
    ================================================ */
-.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:2.5rem;align-items:start;margin-top:1.75rem;}
-.about-copy{min-width:0;}
-.about-copy p:last-child{margin-bottom:0;}
-.facts-panel{border:1px solid var(--line);border-radius:8px;padding:1.5rem;background:var(--paper-dim);min-width:0;}
-.fact-row{display:flex;justify-content:space-between;gap:1rem;padding:0.6rem 0;border-bottom:1px dashed var(--line);}
-.fact-row:last-child{border-bottom:none;}
-.fact-row dt{font-family:var(--font-mono);font-size:0.76rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--mist);margin:0;min-width:0;}
-.fact-row dd{margin:0;font-weight:500;text-align:right;color:var(--ink);min-width:0;}
- 
-@media (max-width:700px){
-  .about-grid{grid-template-columns:1fr;}
+.about-layout{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:3rem;
+    align-items:start;
 }
+
+.profile-photo img{
+    width:100%;
+    border-radius:20px;
+    display:block;
+}
+
+.lead{
+    font-size:1.15rem;
+    line-height:1.8;
+    margin-bottom:1.5rem;
+}
+
+.interest-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.75rem;
+    margin-top:2rem;
+}
+
+.interest-tags span{
+    padding:.55rem 1rem;
+    border:1px solid var(--line);
+    border-radius:999px;
+
+    font-family:var(--font-mono);
+    font-size:.82rem;
+
+    color:var(--ink);
+    background:var(--paper-dim);
+}
+
  
 /* ================================================
    TOOLKIT
