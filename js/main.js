@@ -50,7 +50,7 @@ if ('IntersectionObserver' in window) {
     sections.forEach(function (s) { navObserver.observe(s); });
   }
 
-  // Scroll reveal
+   // Scroll reveal
 var revealEls = document.querySelectorAll('.reveal');
 var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!prefersReduced && 'IntersectionObserver' in window) {
@@ -61,25 +61,32 @@ if (!prefersReduced && 'IntersectionObserver' in window) {
           obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0, rootMargin: '50px' }); // More lenient: threshold 0 and 50px margin
     revealEls.forEach(function (el) { revealObserver.observe(el); });
-    // Fallback: some browsers/zoom levels can prevent IntersectionObserver from firing reliably.
-    // Do a safety-check shortly after load and on resize to ensure elements that are actually visible
-    // get the 'is-visible' class even if the observer didn't fire.
+    
+    // Aggressive safety check: ensure all reveal elements that should be visible are revealed
     function revealSafetyCheck(){
       revealEls.forEach(function(el){
         if (el.classList.contains('is-visible')) return;
         var r = el.getBoundingClientRect();
+        // Mark visible if ANY part is in viewport
         if (r.top < window.innerHeight && r.bottom > 0){
           el.classList.add('is-visible');
         }
       });
     }
-    // run once after a short delay (handles initial load/zoomed refresh cases)
+    // Multiple checks at increasing delays to catch various timing issues
+    setTimeout(revealSafetyCheck, 100);
     setTimeout(revealSafetyCheck, 300);
-    // also run on resize/orientationchange to catch zoom/viewport changes
+    setTimeout(revealSafetyCheck, 800);
+    // Also run on every scroll, resize, and orientation change
+    window.addEventListener('scroll', revealSafetyCheck);
     window.addEventListener('resize', revealSafetyCheck);
     window.addEventListener('orientationchange', revealSafetyCheck);
+    // Run on DOMContentLoaded to catch late-loading content
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', revealSafetyCheck);
+    }
   } else {
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
