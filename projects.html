@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Delon Khaerun Alief</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html#top" class="brand">
+      <span class="brand-mark hex" aria-hidden="true"><img src="assets/logo.svg" alt=""></span>
+      <span class="brand-name">Delon Khaerun Alief</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav aria-label="Primary">
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#toolkit">Toolkit</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="projects.html" class="is-active">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <!-- Add your resume.pdf next to this file for this link to work -->
+        <li><a href="assets/CV_Delon Khaerun Alief.pdf" class="btn btn-fill btn-sm nav-resume-btn" target="_blank" rel="noopener">CV</a></li>
+        <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+          <span class="sun-icon" aria-hidden="true">☀️</span>
+          <span class="moon-icon" aria-hidden="true">🌙</span>
+        </button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="rail-section alt-bg reveal" id="projects-list">
+    <div class="section-inner">
+      <div class="section-tag hex" aria-hidden="true">05</div>
+      <div class="section-content">
+        <p class="section-eyebrow">Projects</p>
+        <h1>All Projects</h1>
+        <p class="lede">A curated collection of project writeups, coursework, and thesis reports. Click a card to read the summary or open the report.</p>
+
+        <!-- Optional toolbar (search / sort placeholders for future JS) -->
+        <div style="display:flex;gap:1rem;align-items:center;margin-top:1rem;flex-wrap:wrap;">
+          <input type="search" placeholder="Search projects (placeholder)" style="flex:1;max-width:420px;padding:0.6rem 0.8rem;border-radius:8px;border:1px solid var(--line);background:var(--paper);">
+          <select aria-label="Sort projects (placeholder)" style="padding:0.6rem 0.8rem;border-radius:8px;border:1px solid var(--line);background:var(--paper);">
+            <option>Sort: Newest</option>
+            <option>Sort: Oldest</option>
+            <option>Sort: Alphabetical</option>
+          </select>
+          <div style="margin-left:auto"><a href="assets/CV_Delon Khaerun Alief.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download CV</a></div>
+        </div>
+
+        <div class="projects-grid" style="margin-top:1.5rem;">
+
+          <!-- Card 1 -->
+          <article class="project-card">
+            <div class="project-thumb" aria-hidden="true">
+              <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+              <img src="images/dac_scheme.jpeg" alt="Mg-Carbonate thumbnail">
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Thesis · Materials</span>
+              <h3>Mg-Carbonate Flame Retardant</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+              <dl class="project-meta">
+                <div><dt>Date</dt><dd>June 2025</dd></div>
+                <div><dt>Tools</dt><dd>ASPEN HYSYS, Excel</dd></div>
+              </dl>
+              <div class="project-actions">
+                <a href="assets/reports/mg-carbonate-flame-retardant.pdf" class="btn btn-outline view-report" target="_blank" rel="noopener">View Report</a>
+                <a href="assets/reports/mg-carbonate-flame-retardant.pdf" download class="btn btn-outline">Download</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="project-card">
+            <div class="project-thumb" aria-hidden="true">
+              <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+              <img src="images/nuclear-pid.jpeg" alt="Thorium NPP thumbnail">
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Thesis · Process Design</span>
+              <h3>Thorium-Based Nuclear Power Plant</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <dl class="project-meta">
+                <div><dt>Date</dt><dd>March 2024</dd></div>
+                <div><dt>Tools</dt><dd>MATLAB, AutoCAD</dd></div>
+              </dl>
+              <div class="project-actions">
+                <a href="assets/reports/thorium-based-npp-design.pdf" class="btn btn-outline view-report" target="_blank" rel="noopener">View Report</a>
+                <a href="assets/reports/thorium-based-npp-design.pdf" download class="btn btn-outline">Download</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="project-card">
+            <div class="project-thumb no-thumb" aria-hidden="true">
+              <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+              <span class="thumb-label">Project 3</span>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Coursework · Simulation</span>
+              <h3>Process Optimization Study</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              <dl class="project-meta">
+                <div><dt>Date</dt><dd>December 2023</dd></div>
+                <div><dt>Tools</dt><dd>Python, Excel</dd></div>
+              </dl>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline" aria-disabled="true">View Report</a>
+                <a href="#" class="btn btn-outline" aria-disabled="true">Download</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="project-card">
+            <div class="project-thumb no-thumb" aria-hidden="true">
+              <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+              <span class="thumb-label">Project 4</span>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Example · Prototype</span>
+              <h3>Process Control Prototype</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
+              <dl class="project-meta">
+                <div><dt>Date</dt><dd>August 2022</dd></div>
+                <div><dt>Tools</dt><dd>Simulink, Raspberry Pi</dd></div>
+              </dl>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline" aria-disabled="true">View Report</a>
+                <a href="#" class="btn btn-outline" aria-disabled="true">Download</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="project-card">
+            <div class="project-thumb no-thumb" aria-hidden="true">
+              <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+              <span class="thumb-label">Project 5</span>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Research · Energy</span>
+              <h3>Energy Systems Analysis</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+              <dl class="project-meta">
+                <div><dt>Date</dt><dd>May 2021</dd></div>
+                <div><dt>Tools</dt><dd>Excel, Python</dd></div>
+              </dl>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline" aria-disabled="true">View Report</a>
+                <a href="#" class="btn btn-outline" aria-disabled="true">Download</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="project-card">
+            <div class="project-thumb no-thumb" aria-hidden="true">
+              <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+              <span class="thumb-label">Project 6</span>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Capstone · Design</span>
+              <h3>Plant Design Capstone</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <dl class="project-meta">
+                <div><dt>Date</dt><dd>November 2020</dd></div>
+                <div><dt>Tools</dt><dd>AutoCAD, HYSYS</dd></div>
+              </dl>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline" aria-disabled="true">View Report</a>
+                <a href="#" class="btn btn-outline" aria-disabled="true">Download</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="margin-top:2.5rem;display:flex;gap:1rem;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+          <a href="index.html" class="btn btn-outline">Back to home</a>
+          <div class="projects-cta"><a href="#" class="btn btn-fill">Load more (placeholder)</a></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="hex footer-mark" aria-hidden="true"><img src="assets/logo.svg" alt=""></span>
+      <p style="margin:0;">© <span id="year"></span> Delon Khaerun Alief.</p>
+    </div>
+    <a href="#top" class="back-to-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<!-- Modal viewer (shared) -->
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Document viewer">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">Document</div>
+      <button class="modal-close" id="modalClose" aria-label="Close viewer">✕</button>
+    </div>
+    <div class="modal-body">
+      <embed id="cvEmbed" class="cv-embed" type="application/pdf" src="" style="display:none">
+      <div id="pdfViewer" class="pdf-viewer" style="display:none">
+        <div class="pdf-toolbar">
+          <button id="zoomOut" class="btn btn-outline" title="Zoom out">−</button>
+          <button id="zoomIn" class="btn btn-outline" title="Zoom in">+</button>
+          <button id="fitWidth" class="btn btn-outline" title="Fit to width">Fit width</button>
+          <button id="fitPage" class="btn btn-outline" title="Fit to page">Fit page</button>
+          <div style="width:1px;height:1px;opacity:0.02"></div>
+          <button id="openTabBtn" class="btn btn-outline" title="Open in new tab">Open ⤴</button>
+          <button id="downloadBtn" class="btn btn-outline" title="Download">Download ⤓</button>
+          <button id="prevPage" class="btn btn-outline" title="Previous page">◀</button>
+          <input id="pageNumInput" type="number" min="1" value="1" style="width:4.2rem;padding:0.4rem;border-radius:6px;border:1px solid var(--line);background:var(--paper);font-family:var(--font-mono);">
+          <span id="pageIndicator" style="font-family:var(--font-mono);font-size:0.95rem;color:var(--mist)"></span>
+          <button id="nextPage" class="btn btn-outline" title="Next page">▶</button>
+        </div>
+        <canvas id="pdfCanvas" class="pdf-canvas"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script src="js/main.js" defer></script>
+
+</body>
+</html>
