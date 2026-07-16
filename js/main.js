@@ -63,6 +63,23 @@ if (!prefersReduced && 'IntersectionObserver' in window) {
       });
     }, { threshold: 0.15 });
     revealEls.forEach(function (el) { revealObserver.observe(el); });
+    // Fallback: some browsers/zoom levels can prevent IntersectionObserver from firing reliably.
+    // Do a safety-check shortly after load and on resize to ensure elements that are actually visible
+    // get the 'is-visible' class even if the observer didn't fire.
+    function revealSafetyCheck(){
+      revealEls.forEach(function(el){
+        if (el.classList.contains('is-visible')) return;
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0){
+          el.classList.add('is-visible');
+        }
+      });
+    }
+    // run once after a short delay (handles initial load/zoomed refresh cases)
+    setTimeout(revealSafetyCheck, 300);
+    // also run on resize/orientationchange to catch zoom/viewport changes
+    window.addEventListener('resize', revealSafetyCheck);
+    window.addEventListener('orientationchange', revealSafetyCheck);
   } else {
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
@@ -172,8 +189,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
       renderPage(num);
     }
   }
-  prevPageBtn && prevPageBtn.addEventListener('click', function(){ if (pageNum <= 1) return; pageNum--; queueRenderPage(pageNum); });
-  nextPageBtn && nextPageBtn.addEventListener('click', function(){ if (!pdfDoc || pageNum >= pdfDoc.numPages) return; pageNum++; queueRenderPage(pageNum); });
 
   // zoom handlers
   function zoomIn(){ console.log('viewer: zoomIn before', scale); scale = Math.min(5, scale * 1.25); console.log('viewer: zoomIn after', scale); queueRenderPage(pageNum); }
@@ -205,10 +220,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
     });
   }
 
-  zoomInBtn && zoomInBtn.addEventListener('click', zoomIn);
-  zoomOutBtn && zoomOutBtn.addEventListener('click', zoomOut);
-  fitWidthBtn && fitWidthBtn.addEventListener('click', fitWidth);
-  fitPageBtn && fitPageBtn.addEventListener('click', fitPage);
 
   if (pageNumInput){
     pageNumInput.addEventListener('change', function(){
@@ -299,32 +310,5 @@ document.getElementById('year').textContent = new Date().getFullYear();
     });
   });
 
-  // open in new tab
-  if (openTabBtn){
-    openTabBtn.addEventListener('click', function(){
-      if (!currentPdfUrl) return;
-      window.open(currentPdfUrl, '_blank', 'noopener');
-    });
-  }
-
-  // download
-  if (downloadBtn){
-    downloadBtn.addEventListener('click', function(){
-      if (!currentPdfUrl) return;
-      // create a link and click it to download
-      var a = document.createElement('a');
-      a.href = currentPdfUrl;
-      // attempt to derive filename
-      try{
-        var parts = currentPdfUrl.split('/');
-        var filename = parts[parts.length-1] || 'report.pdf';
-        a.download = filename;
-      }catch(e){ a.download = 'report.pdf'; }
-      a.style.display = 'none';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    });
-  }
-
+  
 })();
