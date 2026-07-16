@@ -1,25 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%" role="img" aria-label="Delon Khaerun Alief minimalist logo">
   <defs>
     <style>
-      @media (prefers-color-scheme: dark) {
-        .mark { fill: #64B5F6; }
+      svg{display:block}
+      .stroke{fill:none;stroke:#22262a;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter}
+      .inner{fill:#ffffff}
+      @media (prefers-color-scheme: dark){
+        .stroke{stroke:#ffffff}
+        .inner{fill:#0D1117}
       }
     </style>
   </defs>
-  
-  <!-- Modern geometric mark: interlocking circles forming a connected hub -->
-  <!-- Center circle -->
-  <circle cx="50" cy="50" r="8" class="mark" fill="#D4754F"/>
-  
-  <!-- Four connecting orbits with points -->
-  <circle cx="50" cy="25" r="6" class="mark" fill="#D4754F"/>
-  <circle cx="75" cy="50" r="6" class="mark" fill="#D4754F"/>
-  <circle cx="50" cy="75" r="6" class="mark" fill="#D4754F"/>
-  <circle cx="25" cy="50" r="6" class="mark" fill="#D4754F"/>
-  
-  <!-- Connecting lines -->
-  <line x1="50" y1="33" x2="50" y2="42" stroke="#D4754F" stroke-width="2" stroke-linecap="round"/>
-  <line x1="58" y1="58" x2="67" y2="67" stroke="#D4754F" stroke-width="2" stroke-linecap="round"/>
-  <line x1="50" y1="58" x2="50" y2="67" stroke="#D4754F" stroke-width="2" stroke-linecap="round"/>
-  <line x1="42" y1="58" x2="33" y2="67" stroke="#D4754F" stroke-width="2" stroke-linecap="round"/>
+
+
+  <!-- Letter D (box-like with rounded corner approximation) -->
+  <path d="M 50 130 L 50 52 L 90 52 A 10 10 0 0 1 100 62 L 100 138 A 10 10 0 0 1 90 148 L 50 148" class="stroke" stroke-linecap="butt" stroke-linejoin="miter" />
+
+  <!-- Letter K (chevron) -->
+  <polyline points="152,52 110,100 152,148" class="stroke" stroke-linecap="butt" stroke-linejoin="miter" />
 </svg>
