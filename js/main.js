@@ -94,6 +94,58 @@ if (!prefersReduced && 'IntersectionObserver' in window) {
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Project tag filters for projects page
+function initProjectFilters() {
+  var filterContainer = document.getElementById('projectFilters');
+  var projectCards = Array.from(document.querySelectorAll('.projects-grid .project-card'));
+  if (!filterContainer || projectCards.length === 0) return;
+
+  var allTags = {};
+  projectCards.forEach(function(card) {
+    var tagEl = card.querySelector('.project-tag');
+    if (!tagEl) return;
+    var tags = tagEl.textContent.split('·').map(function(item) { return item.trim(); }).filter(Boolean);
+    card.dataset.projectTags = tags.join('|');
+    tags.forEach(function(tag) { allTags[tag] = true; });
+  });
+
+  var tagNames = Object.keys(allTags).sort(function(a, b) { return a.localeCompare(b); });
+  if (tagNames.length === 0) return;
+
+  function setSelectedFilter(filter) {
+    projectCards.forEach(function(card) {
+      var tags = (card.dataset.projectTags || '').split('|');
+      var matches = filter === 'All' || tags.indexOf(filter) !== -1;
+      card.style.display = matches ? 'flex' : 'none';
+    });
+  }
+
+  function createFilterButton(tag, selected) {
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'chip' + (selected ? ' is-selected' : '');
+    button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+    button.textContent = tag;
+    button.addEventListener('click', function() {
+      filterContainer.querySelectorAll('.chip').forEach(function(chip) {
+        var isSelected = chip === button;
+        chip.classList.toggle('is-selected', isSelected);
+        chip.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+      });
+      setSelectedFilter(tag);
+    });
+    return button;
+  }
+
+  filterContainer.appendChild(createFilterButton('All', true));
+  tagNames.forEach(function(tag) {
+    filterContainer.appendChild(createFilterButton(tag, false));
+  });
+  setSelectedFilter('All');
+}
+
+initProjectFilters();
+
 /* Modal viewer logic for CV (embed) and project reports (PDF.js) */
 (function(){
   console.log('Viewer script: initializing modal viewer');

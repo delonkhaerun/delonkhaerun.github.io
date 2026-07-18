@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — Delon Khaerun Alief</title>
+  <title>Projects | Delon Khaerun Alief</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -48,15 +48,11 @@
         <h1>All Projects</h1>
         <p class="lede">A curated collection of project writeups, coursework, and thesis reports. Click a card to read the summary or open the report.</p>
 
-        <!-- Optional toolbar (search / sort placeholders for future JS) -->
-        <div style="display:flex;gap:1rem;align-items:center;margin-top:1rem;flex-wrap:wrap;">
-          <input type="search" placeholder="Search projects (placeholder)" style="flex:1;max-width:420px;padding:0.6rem 0.8rem;border-radius:8px;border:1px solid var(--line);background:var(--paper);">
-          <select aria-label="Sort projects (placeholder)" style="padding:0.6rem 0.8rem;border-radius:8px;border:1px solid var(--line);background:var(--paper);">
-            <option>Sort: Newest</option>
-            <option>Sort: Oldest</option>
-            <option>Sort: Alphabetical</option>
-          </select>
-          <div style="margin-left:auto"><a href="assets/CV_Delon Khaerun Alief.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download CV</a></div>
+        <div class="project-toolbar">
+          <div class="project-filter-block">
+            <div class="project-filter-label">Filter projects by tag</div>
+            <div id="projectFilters" class="chip-list" aria-label="Filter projects by tag"></div>
+          </div>
         </div>
 
         <div class="projects-grid" style="margin-top:1.5rem;">
@@ -65,19 +61,18 @@
           <article class="project-card">
             <div class="project-thumb" aria-hidden="true">
               <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-              <img src="images/dac_scheme.jpeg" alt="Mg-Carbonate thumbnail">
+              <img src="images/dac_scheme.jpg" alt="Mg-Carbonate thumbnail">
             </div>
             <div class="project-body">
-              <span class="project-tag">Thesis · Materials</span>
-              <h3>Mg-Carbonate Flame Retardant</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+              <span class="project-tag">Thesis</span>
+              <h3>Direct Air Capture: Mg-Carbonate Flame Retardant</h3>
+              <p>Developed and evaluated a sustainable flame retardant derived from direct air capture (DAC) technology by incorporating magnesium carbonate into polymer composites and assessing its fire performance and thermal properties.</p>
               <dl class="project-meta">
-                <div><dt>Date</dt><dd>June 2025</dd></div>
-                <div><dt>Tools</dt><dd>ASPEN HYSYS, Excel</dd></div>
+                <div><dt>Date</dt><dd>July 2026</dd></div>
+                <div><dt>Tools</dt><dd>Excel</dd></div>
               </dl>
               <div class="project-actions">
                 <a href="assets/reports/mg-carbonate-flame-retardant.pdf" class="btn btn-outline view-report" target="_blank" rel="noopener">View Report</a>
-                <a href="assets/reports/mg-carbonate-flame-retardant.pdf" download class="btn btn-outline">Download</a>
               </div>
             </div>
           </article>
@@ -86,19 +81,18 @@
           <article class="project-card">
             <div class="project-thumb" aria-hidden="true">
               <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-              <img src="images/nuclear-pid.jpeg" alt="Thorium NPP thumbnail">
+              <img src="images/nuclear-pfd.jpeg" alt="Thorium NPP thumbnail">
             </div>
             <div class="project-body">
-              <span class="project-tag">Thesis · Process Design</span>
-              <h3>Thorium-Based Nuclear Power Plant</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <span class="project-tag">Capstone · Plant Design</span>
+              <h3>Thorium-Based Nuclear Power Plant: Plant Design</h3>
+              <p>Designed a conceptual 250 MW thorium molten salt nuclear power plant by integrating process simulation, utility systems, and techno-economic analysis to evaluate its technical and economic feasibility for electricity generation.</p>
               <dl class="project-meta">
-                <div><dt>Date</dt><dd>March 2024</dd></div>
-                <div><dt>Tools</dt><dd>MATLAB, AutoCAD</dd></div>
+                <div><dt>Date</dt><dd>June 2026</dd></div>
+                <div><dt>Tools</dt><dd>Aspen HYSYS, Excel</dd></div>
               </dl>
               <div class="project-actions">
                 <a href="assets/reports/thorium-based-npp-design.pdf" class="btn btn-outline view-report" target="_blank" rel="noopener">View Report</a>
-                <a href="assets/reports/thorium-based-npp-design.pdf" download class="btn btn-outline">Download</a>
               </div>
             </div>
           </article>
@@ -107,19 +101,18 @@
           <article class="project-card">
             <div class="project-thumb no-thumb" aria-hidden="true">
               <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-              <span class="thumb-label">Project 3</span>
+              <img src="images/ammonia-refrig-comp.jpeg" alt="Ammonia refrig comp thumbnail">
             </div>
             <div class="project-body">
-              <span class="project-tag">Coursework · Simulation</span>
-              <h3>Process Optimization Study</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              <span class="project-tag">Process Engineer · Performance Evaluation</span>
+              <h3>Ammonia Refrigeration Compressor Performance Evaluation</h3>
+              <p>Evaluated the performance of an industrial ammonia refrigeration compressor by comparing its operating conditions with design specifications to assess efficiency, reliability, and potential performance degradation.</p>
               <dl class="project-meta">
-                <div><dt>Date</dt><dd>December 2023</dd></div>
-                <div><dt>Tools</dt><dd>Python, Excel</dd></div>
+                <div><dt>Date</dt><dd>September 2025</dd></div>
+                <div><dt>Tools</dt><dd>Excel, VBA</dd></div>
               </dl>
               <div class="project-actions">
-                <a href="#" class="btn btn-outline" aria-disabled="true">View Report</a>
-                <a href="#" class="btn btn-outline" aria-disabled="true">Download</a>
+                <a href="assets/reports/refrig-comp.pdf" class="btn btn-outline" aria-disabled="true">View Report</a>
               </div>
             </div>
           </article>
@@ -128,19 +121,18 @@
           <article class="project-card">
             <div class="project-thumb no-thumb" aria-hidden="true">
               <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-              <span class="thumb-label">Project 4</span>
+              <img src="images/process-design.jpeg" alt="Process design thumbnail">
             </div>
             <div class="project-body">
-              <span class="project-tag">Example · Prototype</span>
-              <h3>Process Control Prototype</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
+              <span class="project-tag">Coursework · Process Design</span>
+              <h3>Ammonia Reactor Process Design</h3>
+              <p>Determined reactor operating conditions, estimated reactor dimensions and performance, and evaluated the effects of temperature, pressure, and conversion on ammonia production through engineering calculations and process analysis.</p>
               <dl class="project-meta">
-                <div><dt>Date</dt><dd>August 2022</dd></div>
-                <div><dt>Tools</dt><dd>Simulink, Raspberry Pi</dd></div>
+                <div><dt>Date</dt><dd>December 2025</dd></div>
+                <div><dt>Tools</dt><dd>Aspen HYSYS</dd></div>
               </dl>
               <div class="project-actions">
-                <a href="#" class="btn btn-outline" aria-disabled="true">View Report</a>
-                <a href="#" class="btn btn-outline" aria-disabled="true">Download</a>
+                <a href="assets/reports/ammonia-process.pdf" class="btn btn-outline" aria-disabled="true">View Report</a>
               </div>
             </div>
           </article>
@@ -149,20 +141,16 @@
           <article class="project-card">
             <div class="project-thumb no-thumb" aria-hidden="true">
               <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-              <span class="thumb-label">Project 5</span>
+              <img src="images/safety-design.jpeg" alt="Safety design thumbnail">
             </div>
             <div class="project-body">
-              <span class="project-tag">Research · Energy</span>
-              <h3>Energy Systems Analysis</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+              <span class="project-tag">Coursework · Process Safety Design</span>
+              <h3>Glycolic Acid Process Safety Design</h3>
+              <p>Developed a process safety design for a glycolic acid plant by identifying potential process hazards and implementing engineering safeguards in accordance with industrial safety principles.</p>
               <dl class="project-meta">
-                <div><dt>Date</dt><dd>May 2021</dd></div>
-                <div><dt>Tools</dt><dd>Excel, Python</dd></div>
+                <div><dt>Date</dt><dd>December 2025</dd></div>
+                <div><dt>Tools</dt><dd>Aloha, Excel</dd></div>
               </dl>
-              <div class="project-actions">
-                <a href="#" class="btn btn-outline" aria-disabled="true">View Report</a>
-                <a href="#" class="btn btn-outline" aria-disabled="true">Download</a>
-              </div>
             </div>
           </article>
 
@@ -170,19 +158,53 @@
           <article class="project-card">
             <div class="project-thumb no-thumb" aria-hidden="true">
               <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-              <span class="thumb-label">Project 6</span>
+              <img src="images/absorption-flooding.jpeg" alt="Absorption thumbnail">
             </div>
             <div class="project-body">
-              <span class="project-tag">Capstone · Design</span>
-              <h3>Plant Design Capstone</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <span class="project-tag">Coursework · Equipment Design</span>
+              <h3>CO2 Absorption Column Design</h3>
+              <p>Evaluated absorption performance, determined solvent requirements, estimated column dimensions, and verified design feasibility through engineering calculations.</p>
               <dl class="project-meta">
-                <div><dt>Date</dt><dd>November 2020</dd></div>
-                <div><dt>Tools</dt><dd>AutoCAD, HYSYS</dd></div>
+                <div><dt>Date</dt><dd>January 2025</dd></div>
+                <div><dt>Tools</dt><dd>Aspen HYSYS, Excel</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- Card 7 -->
+          <article class="project-card">
+            <div class="project-thumb no-thumb" aria-hidden="true">
+              <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+              <img src="images/tray-spacing.jpeg" alt="Tray thumbnail">
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Coursework · Equipment Design</span>
+              <h3>Hydrocarbon Distillation Column Design</h3>
+              <p>Determined operating conditions, reflux ratio, theoretical stage requirements, and column dimensions through process calculations and simulation to achieve the target separation performance.</p>
+              <dl class="project-meta">
+                <div><dt>Date</dt><dd>November 2024</dd></div>
+                <div><dt>Tools</dt><dd>Aspen HYSYS, Excel</dd></div>
               </dl>
               <div class="project-actions">
-                <a href="#" class="btn btn-outline" aria-disabled="true">View Report</a>
-                <a href="#" class="btn btn-outline" aria-disabled="true">Download</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 8 -->
+          <article class="project-card">
+            <div class="project-thumb no-thumb" aria-hidden="true">
+              <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+              <img src="images/sthe-aes.jpeg" alt="Tray thumbnail">
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Coursework · Equipment Design</span>
+              <h3>Shell-and-Tube Heat Exchanger Design</h3>
+              <p>Determined heat transfer duty, estimated heat transfer area, selected exchanger configuration, and evaluated thermal performance based on process operating conditions.</p>
+              <dl class="project-meta">
+                <div><dt>Date</dt><dd>May 2024</dd></div>
+                <div><dt>Tools</dt><dd>Excel</dd></div>
+              </dl>
+              <div class="project-actions">
               </div>
             </div>
           </article>
@@ -191,7 +213,6 @@
 
         <div style="margin-top:2.5rem;display:flex;gap:1rem;justify-content:space-between;align-items:center;flex-wrap:wrap;">
           <a href="index.html" class="btn btn-outline">Back to home</a>
-          <div class="projects-cta"><a href="#" class="btn btn-fill">Load more (placeholder)</a></div>
         </div>
 
       </div>
